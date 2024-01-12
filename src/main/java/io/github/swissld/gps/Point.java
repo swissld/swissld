@@ -1,5 +1,8 @@
 package io.github.swissld.gps;
 
+import java.time.LocalDateTime;
+import java.util.Objects;
+
 /**
  * <h3>Point</h3>
  * 
@@ -8,43 +11,73 @@ package io.github.swissld.gps;
  */
 public final class Point
 	{
-	private final float latitude;
-	private final float longitude;
-	private final float altitude;
+	private final String type;
+	private final LocalDateTime date;
+	private final Coordinate coordinate;
+	private final float accuracy;
+	private final String name;
+	private final String description;
 
 	/**
 	 * @since 0.1.0
 	 */
-	public Point(final float latitude, final float longitude, final float altitude)
+	public Point(final String type, final LocalDateTime date, final Coordinate coordinate, final float accuracy, final String name, final String description)
 		{
 		super();
 
-		this.latitude = latitude;
-		this.longitude = longitude;
-		this.altitude = altitude;
+		this.type = Objects.requireNonNull(type);
+		this.date = Objects.requireNonNull(date);
+		this.coordinate = Objects.requireNonNull(coordinate);
+		this.accuracy = accuracy;
+		this.name = Objects.requireNonNull(name);
+		this.description = Objects.requireNonNull(description);
 		}
 
 	/**
 	 * @since 0.1.0
 	 */
-	public float getLatitude()
+	public String getType()
 		{
-		return latitude;
+		return type;
 		}
 
 	/**
 	 * @since 0.1.0
 	 */
-	public float getLongitude()
+	public LocalDateTime getDateTime()
 		{
-		return longitude;
+		return date;
 		}
 
 	/**
 	 * @since 0.1.0
 	 */
-	public float getAltitude()
+	public Coordinate getCoordinate()
 		{
-		return altitude;
+		return coordinate;
+		}
+
+	/**
+	 * @since 0.1.0
+	 */
+	public float getAccuracy()
+		{
+		return accuracy;
+		}
+
+	/**
+	 * @since 0.1.0
+	 */
+	public String getName()
+		{
+		return name;
+		}
+
+	/**
+	 * @since 0.1.0
+	 */
+	public String getDescription()
+		{
+		return description;
 		}
 	}

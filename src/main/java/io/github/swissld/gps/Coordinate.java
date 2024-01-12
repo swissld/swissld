@@ -1,59 +1,50 @@
 package io.github.swissld.gps;
 
-import java.time.LocalDateTime;
-import java.util.Objects;
-
-public class Coordinate
+/**
+ * <h3>Coordinate</h3>
+ * 
+ * @version 0.1.0
+ * @since 0.1.0
+ */
+public final class Coordinate
 	{
-	protected final Type type;
-	public LocalDateTime date;
-	protected final Point point;
-	public float accuracy;
-	public int satellitesUsed;
-	public int satellitesInView;
-	public String name;
-	public String description;
+	private final double latitude;
+	private final double longitude;
+	private final double altitude;
 
 	/**
 	 * @since 0.1.0
 	 */
-	public Coordinate(final Type type, final Point point)
+	public Coordinate(final double latitude, final double longitude, final double altitude)
 		{
 		super();
 
-		this.type = Objects.requireNonNull(type);
-		this.point = Objects.requireNonNull(point);
+		this.latitude = latitude;
+		this.longitude = longitude;
+		this.altitude = altitude;
 		}
 
 	/**
 	 * @since 0.1.0
 	 */
-	public final Type getType()
+	public double getLatitude()
 		{
-		return type;
+		return latitude;
 		}
 
 	/**
 	 * @since 0.1.0
 	 */
-	public final Point getPoint()
+	public double getLongitude()
 		{
-		return point;
+		return longitude;
 		}
 
 	/**
 	 * @since 0.1.0
 	 */
-	public final boolean isTrackPoint()
+	public double getAltitude()
 		{
-		return type == Type.TRACK;
-		}
-
-	/**
-	 * @since 0.1.0
-	 */
-	public final boolean isPoint()
-		{
-		return type == Type.POINT;
+		return altitude;
 		}
 	}

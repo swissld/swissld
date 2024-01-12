@@ -1,5 +1,8 @@
 
-target/
+/gps/
+/target/
+
+old/
 
 # Compiled class file
 *.class
