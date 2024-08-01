@@ -6,10 +6,5 @@ module io.github.swissld
 
 	requires org.jsoup;
 
-	/*
-	exports io.github.swissld.json;
-	exports io.github.swissld.jsonld;
-	exports io.github.swissld.lod;
-	exports io.github.swissld.util;
-	*/
+	//exports io.github.swissld.json;
 	}

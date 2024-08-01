@@ -8,7 +8,4 @@ package io.github.swissld.schema.org;
  */
 public final class SchemaOrg
 	{
-	public static final String CONTEXT = "https://schema.org";
-
-	//public static final String GEO_COORDINATES = "GeoCoordinates";
 	}

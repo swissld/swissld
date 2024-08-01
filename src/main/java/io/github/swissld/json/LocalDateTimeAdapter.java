@@ -9,13 +9,11 @@ import com.google.gson.JsonSyntaxException;
 import com.google.gson.TypeAdapter;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import io.github.swissld.util.DateTimeFormats;
 
 public class LocalDateTimeAdapter extends TypeAdapter<LocalDateTime>
 	{
-	//private static final String ISO_8601 = "yyyy-MM-dd'T'HH:mm:ss.sss'Z'"; // Too many s, .ss ok .sss fail ????
-	private static final String ISO_8601 = "yyyy-MM-dd'T'HH:mm:ss";
-
-	private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern(ISO_8601);
+	private final DateTimeFormatter formatter = DateTimeFormats.ISO_8601;
 
 	/**
 	 * @since 0.1.0
@@ -34,7 +32,7 @@ public class LocalDateTimeAdapter extends TypeAdapter<LocalDateTime>
 		{
 		try
 			{
-			final var value = FORMATTER.format(date);
+			final var value = formatter.format(date);
 
 			writer.value(value);
 			}
